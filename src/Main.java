@@ -1,37 +1,35 @@
 public class Main {
     public static void main(String[] args) {
 
-        Person bob = new Person();      // вызов первого конструктора без параметров
-        bob.displayInfo();
+        Person person1 = new Person();      // вызов первого конструктора без параметров
+        person1.move();
 
-        Person tom = new Person("Tom"); // вызов второго конструктора с одним параметром
-        tom.displayInfo();
 
-        Person sam = new Person("Sam", 25); // вызов третьего конструктора с двумя параметрами
-        sam.displayInfo();
+        Person person2 = new Person("Игорь",30); // вызов второго конструктора с двумя параметрами
+        person2.talk();
     }
 }
 class Person{
 
-    String name;    // имя
+    String fullName;    // имя
     int age;        // возраст
     Person()
     {
-        name = "Undefined";
-        age = 18;
+        fullName = "Неивестный"; //если без параметров
+        age = 20;
     }
-    Person(String n)
-    {
-        name = n;
-        age = 18;
-    }
+
     Person(String n, int a)
     {
-        name = n;
+        fullName = n;
         age = a;
     }
-    void displayInfo(){
-        System.out.printf("Name: %s \tAge: %d\n", name, age);
+
+    void move(){
+        System.out.println(fullName + " говорит: мне " + age + " лет");
+    }
+    void talk(){
+        System.out.println(fullName + " говорит: мне " + age + " лет");
     }
 }
 
